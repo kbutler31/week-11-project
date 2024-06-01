@@ -3,53 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic Tac Toe</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      width: 300px;
-    }
-    .cell {
-      width: 100px;
-      height: 100px;
-      border: 1px solid black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2em;
-      cursor: pointer;
-    }
-    .alert {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1000;
-    }
-  </style>
+  <title>Tic-tac-toe</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="project.js"></script>
 </head>
-<body>
-  <h1 id="turn">X's Turn</h1>
-  <div class="container" id="grid">
-    <div class="cell" onclick="handleClick(0)"></div>
-    <div class="cell" onclick="handleClick(1)"></div>
-    <div class="cell" onclick="handleClick(2)"></div>
-    <div class="cell" onclick="handleClick(3)"></div>
-    <div class="cell" onclick="handleClick(4)"></div>
-    <div class="cell" onclick="handleClick(5)"></div>
-    <div class="cell" onclick="handleClick(6)"></div>
-    <div class="cell" onclick="handleClick(7)"></div>
-    <div class="cell" onclick="handleClick(8)"></div>
-  </div>
-  <button onclick="restartGame()">Restart Game</button>
-  <div class="alert" id="result"></div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="./project.js"></script>
+<body>
+  <div id="main">
+    <h1>Tic-tac-toe</h1>
+    <p id="ins">Game starts by just Tap on box
+      <br><br> First Player starts as <b> Player X</b> And Second Player as <b> Player O</b>
+    </p>
+    <br><br>
+    <div class = "ui"> 
+      <div class="row"> 
+          <input type="text" id= "b1" 
+                 class="cell" onclick="myfunc_3(); myfunc();" 
+                 readonly> 
+          <input type="text" id= "b2" 
+                 class="cell" onclick="myfunc_4(); myfunc();" 
+                 readonly> 
+          <input type="text" id= "b3" class="cell" 
+                 onclick="myfunc_5(); myfunc();" 
+                 readonly> 
+      </div> 
+      <div class="row"> 
+          <input type="text" id= "b4" 
+                 class="cell" onclick="myfunc_6(); myfunc();" 
+                 readonly> 
+          <input type="text" id= "b5" 
+                 class="cell" onclick="myfunc_7(); myfunc();" 
+                 readonly> 
+          <input type="text" id= "b6" 
+                 class="cell" onclick="myfunc_8(); myfunc();" 
+                 readonly> 
+      </div> 
+      <div class="row"> 
+          <input type="text" id= "b7" 
+                 class="cell" onclick="myfunc_9(); myfunc();" 
+                 readonly> 
+                <input type="text" id= "b8" 
+                       class="cell" onclick="myfunc_10();myfunc();" 
+                       readonly> 
+                <input type="text" id= "b9" 
+                       class="cell" onclick="myfunc_11();myfunc();" 
+                       readonly> 
+  </div>
+</div>
+<br><br><br> 
+        
+<button id="but" onclick="myfunc_2()"> 
+       RESET 
+  </button> 
+  <br><br> 
+  <p id="print"></p> 
+</div> 
 
 </body>
 </html>
