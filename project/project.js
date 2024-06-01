@@ -1,6 +1,6 @@
-const cells = document.querySelectorAll(.cell);
-const statusText = document.querySelector(#statusText):
-const restartBtn = document.querySelectorAll(#restartBtn);
+const cells = document.querySelectorAll('.cell');
+const statusText = document.querySelector("#statusText");
+const restartBtn = document.querySelectorAll("#restartBtn");
 const winConditions = [
     [0, 1, 2]
     [3, 4, 5]
@@ -12,7 +12,7 @@ const winConditions = [
     [2, 4, 6]
 ];
 let options = ["", "", "", "", "", "", "", "", ""]
-let currentPlayer = "x"
+let currentPlayer = "X"
 let running = false;
 
 initializeGame()
@@ -20,8 +20,8 @@ initializeGame()
 function initializeGame(){
     cells.forEach(cell => cell.addEventlistener("click, cellClicked"))
     restartBtn.addEventlistener("click", restartGame);
-    statusText.textContent = $(currentPlayer)'s turn';
-    running = true:
+    statusText.textContent = $(currentPlayer)"s turn";
+    running = true;
 }   
 function cellClicked(){
     const cellIndex = this.getAttribute("cellIndex");
@@ -30,7 +30,7 @@ function cellClicked(){
         return;
     }
     updateCell(this, cellIndex);
-    checkWinner(;)
+    checkWinner();
 }
 function updateCell(call, index){
     options(index) = currentPlayer;
@@ -39,16 +39,16 @@ function updateCell(call, index){
 }
 function changePlayer(){
     currentPlayer = (currentPlayer == "X") ? "O" : "X";
-    statusText.textContent = $(currentPlayer)'s turn';
+    statusText.textContent = $(currentPlayer)"s turn";
 }
 function checkWinner(){
-    for roundWon = false;
+    let roundWon = false;
 
     for(let i = 0 i < winConditions.length i++)(
-        const condition = winConditions[i];
-        const cellA = options[condition[0]];
-        const cellB = options[condition[1]];
-        const cellC = options[condition[2]];
+        let condition = winConditions[i];
+        let cellA = options[condition[0]];
+        let cellB = options[condition[1]];
+        let cellC = options[condition[2]];
 
         if(cellA == "" || cellB == "" || cellC == ""){
             continue;
