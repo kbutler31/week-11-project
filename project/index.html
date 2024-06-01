@@ -5,59 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tic-tac-toe</title>
   <link rel="stylesheet" href="style.css">
-  <script src="project.js"></script>
+  
 </head>
 
 <body>
-  <div id="main">
-    <h1>Tic-tac-toe</h1>
-    <p id="ins">Game starts by just Tap on box
-      <br><br> First Player starts as <b> Player X</b> And Second Player as <b> Player O</b>
-    </p>
-    <br><br>
-    <div class = "ui"> 
-      <div class="row"> 
-          <input type="text" id= "b1" 
-                 class="cell" onclick="myfunc_3(); myfunc();" 
-                 readonly> 
-          <input type="text" id= "b2" 
-                 class="cell" onclick="myfunc_4(); myfunc();" 
-                 readonly> 
-          <input type="text" id= "b3" class="cell" 
-                 onclick="myfunc_5(); myfunc();" 
-                 readonly> 
-      </div> 
-      <div class="row"> 
-          <input type="text" id= "b4" 
-                 class="cell" onclick="myfunc_6(); myfunc();" 
-                 readonly> 
-          <input type="text" id= "b5" 
-                 class="cell" onclick="myfunc_7(); myfunc();" 
-                 readonly> 
-          <input type="text" id= "b6" 
-                 class="cell" onclick="myfunc_8(); myfunc();" 
-                 readonly> 
-      </div> 
-      <div class="row"> 
-          <input type="text" id= "b7" 
-                 class="cell" onclick="myfunc_9(); myfunc();" 
-                 readonly> 
-                <input type="text" id= "b8" 
-                       class="cell" onclick="myfunc_10();myfunc();" 
-                       readonly> 
-                <input type="text" id= "b9" 
-                       class="cell" onclick="myfunc_11();myfunc();" 
-                       readonly> 
-  </div>
+<div id="gamecontainer">
+       <h1>tic-tac-toe</h1>
+       <div id="cellContainer">
+              <div cellIndex="0" class="cell"></div>
+              <div cellIndex="1" class="cell"></div>
+              <div cellIndex="2" class="cell"></div>
+              <div cellIndex="3" class="cell"></div>
+              <div cellIndex="4" class="cell"></div>
+              <div cellIndex="5" class="cell"></div>
+              <div cellIndex="6" class="cell"></div>
+              <div cellIndex="7" class="cell"></div>
+              <div cellIndex="8" class="cell"></div>
+       </div>
+       <h2 id="statustext"></h2>
+       <button id="restartbtn">Restart</button>
 </div>
-<br><br><br> 
-        
-<button id="but" onclick="myfunc_2()"> 
-       RESET 
-  </button> 
-  <br><br> 
-  <p id="print"></p> 
-</div> 
-
+<script src="project.js"></script>
 </body>
 </html>
