@@ -1,6 +1,8 @@
+// setup for the game all const values
 const cells = document.querySelectorAll('.cell');
 const statusText = document.querySelector("#statusText");
-const restartBtn = document.querySelector("#restartBtn"); // Changed querySelector to select a single element
+const restartBtn = document.querySelector("#restartBtn"); 
+
 const winConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -14,36 +16,37 @@ const winConditions = [
 let options = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let running = false;
-
+// Will start after and return when restart is initialized
 initializeGame();
 
 function initializeGame(){
-    cells.forEach(cell => cell.addEventListener("click", cellClicked)); // Fixed addEventListener syntax
-    restartBtn.addEventListener("click", restartGame); // Fixed addEventListener syntax
-    statusText.textContent = `${currentPlayer}'s turn`; // Changed jQuery syntax to string template literal
+    cells.forEach(cell => cell.addEventListener("click", cellClicked)); 
+    restartBtn.addEventListener("click", restartGame); 
+    statusText.textContent = `${currentPlayer}'s turn`; 
     running = true;
 }   
 
 function cellClicked(){
+    console.log(`cellClicked29`)
     const cellIndex = this.getAttribute("cellIndex");
 
-    if(options[cellIndex] !== "" || !running){ // Fixed !== and added strict comparison
+    if(options[cellIndex] !== "" || !running){ 
         return;
     }
     updateCell(this, cellIndex);
     checkWinner();
 }
 
-function updateCell(cell, index){ // Changed 'call' to 'cell'
+function updateCell(cell, index){
     options[index] = currentPlayer;
     cell.textContent = currentPlayer;
 }
 
 function changePlayer(){
-    currentPlayer = (currentPlayer === "X") ? "O" : "X"; // Fixed comparison operator
-    statusText.textContent = `${currentPlayer}'s turn`; // Fixed string concatenation
+    currentPlayer = (currentPlayer === "X") ? "O" : "X"; 
+    statusText.textContent = `${currentPlayer}'s turn`; 
 }
-
+// for loop function for the contengencies
 function checkWinner(){
     let roundWon = false;
 
@@ -53,17 +56,17 @@ function checkWinner(){
         let cellB = options[condition[1]];
         let cellC = options[condition[2]];
 
-        if(cellA === "" || cellB === "" || cellC === ""){ // Fixed !== and added strict comparison
+        if(cellA === "" || cellB === "" || cellC === ""){ 
             continue;
         }
-        if(cellA === cellB && cellB === cellC){ // Fixed comparison operator
+        if(cellA === cellB && cellB === cellC){ 
             roundWon = true;
             break;
         }
     }
 
     if(roundWon){
-        statusText.textContent = `${currentPlayer} wins!`; // Fixed string concatenation
+        statusText.textContent = `${currentPlayer} wins!`; 
         running = false;
     }
     else if(!options.includes("")){
@@ -74,11 +77,11 @@ function checkWinner(){
         changePlayer();
     }
 }
-
+// function to restart the game 
 function restartGame(){
     currentPlayer = "X";
     options = ["", "", "", "", "", "", "", "", ""];
-    statusText.textContent = `${currentPlayer}'s turn`; // Fixed string concatenation
+    statusText.textContent = `${currentPlayer}'s turn`; 
     cells.forEach(cell => cell.textContent = "");
     running = true;
 }
